@@ -8,7 +8,8 @@
 <!-- cargo-rdme start -->
 
 This crate aims at providing safe representations
-of [XSD built-in data types][xsd].
+of [XSD built-in data types][xsd], including decimal types (integer, decimal), string types, 
+datetime types, and binary types.
 
 [xsd]: <https://www.w3.org/TR/xmlschema-2/#built-in-datatypes>
 
@@ -36,6 +37,19 @@ let lexical_repr = xsd_types::lexical::Decimal::new(string).unwrap();
 // Interprets the lexical representation (value domain).
 use xsd_types::lexical::LexicalFormOf;
 let value_repr: xsd_types::Decimal = lexical_repr.try_as_value().unwrap();
+```
+
+You can also work with other XSD types like `UnsignedInteger`:
+
+```rust
+// Parse an unsigned integer
+let uint = xsd_types::lexical::UnsignedInteger::new("42").unwrap();
+assert!(uint.is_positive()); // Test if positive
+assert!(!uint.is_zero());    // Test if zero
+
+// Convert to a Rust primitive type
+let value: u32 = u32::try_from(uint).unwrap();
+assert_eq!(value, 42);
 ```
 
 Of course it is possible to parse the value directly into the value domain

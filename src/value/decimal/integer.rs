@@ -19,9 +19,11 @@ use super::{Sign, I16_MIN, I32_MIN, I64_MIN, I8_MIN, U16_MAX, U32_MAX, U64_MAX, 
 
 mod non_negative_integer;
 mod non_positive_integer;
+mod unsigned_integer;
 
 pub use non_negative_integer::*;
 pub use non_positive_integer::*;
+pub use unsigned_integer::*;
 
 /// Integer number.
 #[derive(Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Debug)]

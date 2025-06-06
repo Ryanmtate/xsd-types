@@ -201,6 +201,9 @@ pub const XSD_NON_POSITIVE_INTEGER: &Iri =
 /// <http://www.w3.org/2001/XMLSchema#negativeInteger> datatype IRI.
 pub const XSD_NEGATIVE_INTEGER: &Iri = iri!("http://www.w3.org/2001/XMLSchema#negativeInteger");
 
+/// <http://www.w3.org/2001/XMLSchema#unsignedInteger> datatype IRI.
+pub const XSD_UNSIGNED_INTEGER: &Iri = iri!("http://www.w3.org/2001/XMLSchema#unsignedInteger");
+
 /// <http://www.w3.org/2001/XMLSchema#long> datatype IRI.
 pub const XSD_LONG: &Iri = iri!("http://www.w3.org/2001/XMLSchema#long");
 

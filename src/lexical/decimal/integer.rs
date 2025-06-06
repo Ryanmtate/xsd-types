@@ -9,9 +9,11 @@ use std::str::FromStr;
 
 mod non_negative_integer;
 mod non_positive_integer;
+mod unsigned_integer;
 
 pub use non_negative_integer::*;
 pub use non_positive_integer::*;
+pub use unsigned_integer::*;
 
 lexical_form! {
 	/// Integer number.
